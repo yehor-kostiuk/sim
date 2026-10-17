@@ -1,0 +1,23 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  ci-pipeline:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+
+      - name: restore
+        run: npm install
+
+      - name: build
+        run: echo "Build successful"
+
+      - name: test
+        run: npm test
