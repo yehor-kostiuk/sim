@@ -14,7 +14,7 @@
 
 Діаграма визначає межі системи `Startup Simulator v1.0` та 5 основних сценаріїв взаємодії актора **Гравець** із системою:
 
-![Use Case Diagram](images/use-case.svg)
+![Use Case Diagram](../images/use-case.drawio.svg)
 
 Детальні покрокові специфікації наведено у файлі [`use-cases.md`](use-cases.md), а алгоритми виконання кожного сценарію оформлено у вигляді Activity Diagrams:
 
@@ -30,7 +30,7 @@
 
 Діаграма класів фіксує структуру даних гри без прив’язки до конкретних фреймворків:
 
-![Class Diagram](images/class-diagram.svg)
+![Class Diagram](../images/class-diagram.drawio.svg)
 
 ### Призначення ключових сутностей
 
@@ -47,7 +47,7 @@
 
 Діаграма станів описує допустимі переходи головного об’єкта `Company` протягом ігрової сесії:
 
-![Company State Machine](images/company-state-machine.svg)
+![Company State Machine](../images/state-machine.drawio.svg)
 
 1. **`Active`:** початковий стан після створення компанії (`Garage`, `$5 000`, тиждень 1). Поки після завершення тижня виконується умова `баланс > 0 && не фінал`, компанія залишається в стані `Active` і поступово проходить стадії розвитку (`Garage` → `Small Startup` → `Growing Company` → `Corporation`).
 2. **`Bankrupt`:** термінальний стан поразки, у який компанія переходить при завершенні тижня з умовою `баланс <= 0`. Усі подальші ігрові дії блокуються.
